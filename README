@@ -1,0 +1,38 @@
+# Vim syntax files
+# Language:	YAML
+# Author:	Igor Vergeichik <iverg@mail.ru>
+# Sponsor: Tom Sawyer <transami@transami.net>
+# Copyright (c) 2002 Tom Saywer
+
+YAML.VIM and YAML collection sorting scripts:
+
+INSTALLATION:
+- Put yaml.vim in vim's syntax folder (/usr/share/vim/syntax on my system)
+- Add the .yaml/.yml extensions to the filetype.vim file: >
+    " Yaml
+    au BufNewFile,BufRead *.yaml,*.yml    setf yaml
+- If you want add a new enty to the syntax menu: >
+    an 50.110.370 &Syntax.WXYZ.Yaml :cal SetSyn("yaml")<CR>
+- Put yamlsort.rb and yamlsort.vim into ~/.vim/scripts directory.
+
+SORT USE: >
+  - Type vim command: >
+      :source ~/.vim/scripts/yamlsort.vim
+  - Then: >
+    <F4> is mapped to sort YAML collections in direct order, 
+    and <F5> in reversed order.
+
+NOTES:
+  - If you want change key mapping of sorting rules edit yamlsort.vim
+
+TODO:
+  - Work with short notation of collections and mappings ({}, [])
+  - Support sorting of multiline values
+
+Changelog:
+  06-09-2002:
+    - Key field can contain any number of spaces before column.
+    - >
+      If any record of collection does not key field (i.e field which
+      value is used in sorting), it is placed to the end of collection.
+
