@@ -1,8 +1,9 @@
 " Vim syntax file
 " Language:         YAML (YAML Ain't Markup Language)
+" Author:	    Igor Vergeichik <iverg@mail.ru>
 " Author:           Nikolai Weibull <now@bitwi.se>
-" Author:	        Igor Vergeichik <iverg@mail.ru>
-" Sponsor:          Tom Sawyer <transami@transami.net>
+" Sponsor:          Tom Sawyer <transfire@gmail.com>
+" Version:          2.0
 " Copyright (c) 2002 Tom Saywer
 "
 
