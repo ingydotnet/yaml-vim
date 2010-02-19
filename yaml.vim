@@ -1,10 +1,9 @@
 " Vim syntax file
-" Language:         YAML (YAML Ain't Markup Language)
-" Author:	    Igor Vergeichik <iverg@mail.ru>
-" Author:           Nikolai Weibull <now@bitwi.se>
-" Sponsor:          Tom Sawyer <transfire@gmail.com>
-" Version:          2.0
-" Copyright (c) 2002 Tom Saywer
+" Language:  YAML (YAML Ain't Markup Language)
+" Author:	   Igor Vergeichik <iverg@mail.ru>
+" Author:    Nikolai Weibull <now@bitwi.se>
+" Sponsor:   Tom Sawyer <transfire@gmail.com>
+" Version:   2.0
 "
 
 if version < 600

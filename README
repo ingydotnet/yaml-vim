@@ -1,8 +1,8 @@
 # Vim syntax files
 # Language:	YAML
 # Author:	Igor Vergeichik <iverg@mail.ru>
+# Author:	Nikolai Weibull <now@bitwi.se>
 # Sponsor: Tom Sawyer <transami@transami.net>
-# Copyright (c) 2002 Tom Saywer
 
 YAML.VIM and YAML collection sorting scripts:
 
@@ -30,7 +30,9 @@ TODO:
   - Support sorting of multiline values
 
 Changelog:
-  06-09-2002:
+  2010-02-19:
+    - Merge Nikolai Weibull's rendition of yaml.vim (thanks to Phill Baker).
+  2002-06-09:
     - Key field can contain any number of spaces before column.
     - >
       If any record of collection does not key field (i.e field which
