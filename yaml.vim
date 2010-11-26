@@ -36,7 +36,7 @@ syn match   yamlAlias           "\*.\+"
 syn match   yamlDelimiter       "[-,:]"
 syn match   yamlBlock           "[\[\]\{\}>|]"
 syn match   yamlOperator        '[?+-]'
-syn match   yamlKey             '\w\+\(\s\+\w\+\)*\ze\s*:'
+syn match   yamlKey             '\(\.\|\w\)\+\(\s\+\(\.\|\w\)\+\)*\ze\s*:'
 syn match   yamlScalar          '\(\(|\|>\)\s*\n*\r*\)\@<=\(\s\+\).*\n*\r*\(\(\3\).*\n\)*'
 
 " Predefined data types
