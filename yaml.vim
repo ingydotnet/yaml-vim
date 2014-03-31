@@ -33,10 +33,10 @@ syn region  yamlComment         display oneline start='\%(^\|\s\)#' end='$'
 syn match   yamlNodeProperty    "!\%(![^\\^%     ]\+\|[^!][^:/   ]*\)"
 syn match   yamlAnchor          "&.\+"
 syn match   yamlAlias           "\*.\+"
-syn match   yamlDelimiter       "[-,:]"
+syn match   yamlDelimiter       "[-,:]\(\s\|\n\)"
 syn match   yamlBlock           "[\[\]\{\}>|]"
 syn match   yamlOperator        '[?+-]'
-syn match   yamlKey             '\(\.\|\w\)\+\(\s\+\(\.\|\w\)\+\)*\ze\s*:'
+syn match   yamlKey             '\(\.\|\w\)\+\(\s\+\(\.\|\w\)\+\)*\ze\s*:\(\s\|\n\)'
 syn match   yamlScalar          '\(\(|\|>\)\s*\n*\r*\)\@<=\(\s\+\).*\n*\r*\(\(\3\).*\n\)*'
 
 " Predefined data types
@@ -75,7 +75,7 @@ syn match   yamlTimestamp       '\d\d\d\d-\%(1[0-2]\|\d\)-\%(3[0-2]\|2\d\|1\d\|\
 " Single and double quoted scalars
 syn region  yamlString	        start="'" end="'" skip="\\'"
                                 \ contains=yamlSingleEscape
-syn region  yamlString	        start='"' end='"' skip='\\"' 
+syn region  yamlString	        start='"' end='"' skip='\\"'
                                 \ contains=yamlEscape
 
 " Escaped symbols
@@ -91,7 +91,7 @@ syn match   yamlEscape          contained display '\\U\x\{8}'
 syn match   yamlEscape          display '\\\%(\r\n\|[\r\n]\)'
 syn match   yamlSingleEscape    contained display +''+
 
-syn match   yamlKey		        "\w\+\ze\s*:"
+syn match   yamlKey		        "\w\+\ze\s*:\(\s\|\n\)"
 syn match   yamlType		    "![^\s]\+\s\@="
 
 hi link yamlKey		        Identifier
