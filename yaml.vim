@@ -1,6 +1,6 @@
 " Vim syntax file
 " Language:  YAML (YAML Ain't Markup Language)
-" Author:	   Igor Vergeichik <iverg@mail.ru>
+" Author:    Igor Vergeichik <iverg@mail.ru>
 " Author:    Nikolai Weibull <now@bitwi.se>
 " Sponsor:   Tom Sawyer <transfire@gmail.com>
 " Version:   2.0
@@ -28,28 +28,28 @@ syn match   yamlDirective       contained '%[^:]\+:.\+'
 
 syn region  yamlComment         display oneline start='\%(^\|\s\)#' end='$'
                                 \ contains=yamlTodo,@Spell
-"syn region yamlMapping	        start="\w+:\s*\w+" end="$"
+"syn region yamlMapping         start="\w+:\s*\w+" end="$"
                                 \ contains=yamlKey,yamlValue
 syn match   yamlNodeProperty    "!\%(![^\\^%     ]\+\|[^!][^:/   ]*\)"
 syn match   yamlAnchor          "&.\+"
 syn match   yamlAlias           "\*.\+"
-syn match   yamlDelimiter       "[-,:]"
+syn match   yamlDelimiter       "[-,:]\(\s\|\n\)"
 syn match   yamlBlock           "[\[\]\{\}>|]"
 syn match   yamlOperator        '[?+-]'
-syn match   yamlKey             '\(\.\|\w\)\+\(\s\+\(\.\|\w\)\+\)*\ze\s*:'
+syn match   yamlKey             '\(\.\|\w\)\+\(\s\+\(\.\|\w\)\+\)*\ze\s*:\(\s\|\n\)'
 syn match   yamlScalar          '\(\(|\|>\)\s*\n*\r*\)\@<=\(\s\+\).*\n*\r*\(\(\3\).*\n\)*'
 
 " Predefined data types
 
 " Yaml Integer type
-syn match   yamlInteger	        display "[-+]\?\(0\|[1-9][0-9,]*\)"
-syn match   yamlInteger	        display "[-+]\?0[xX][0-9a-fA-F,]\+"
+syn match   yamlInteger         display "[-+]\?\(0\|[1-9][0-9,]*\)"
+syn match   yamlInteger         display "[-+]\?0[xX][0-9a-fA-F,]\+"
 
 " floating point number
-syn match   yamlFloating		display "\<\d\+\.\d*\(e[-+]\=\d\+\)\=[fl]\=\>"
-syn match   yamlFloating		display "\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
-syn match   yamlFloating		display "\<\d\+e[-+]\=\d\+[fl]\=\>"
-syn match   yamlFloating		display "\(([+-]\?inf)\)\|\((NaN)\)"
+syn match   yamlFloating        display "\<\d\+\.\d*\(e[-+]\=\d\+\)\=[fl]\=\>"
+syn match   yamlFloating        display "\.\d\+\(e[-+]\=\d\+\)\=[fl]\=\>"
+syn match   yamlFloating        display "\<\d\+e[-+]\=\d\+[fl]\=\>"
+syn match   yamlFloating        display "\(([+-]\?inf)\)\|\((NaN)\)"
 " TODO: sexagecimal and fixed (20:30.15 and 1,230.15)
 syn match   yamlNumber          display
                                 \ '\<[+-]\=\d\+\%(\.\d\+\%([eE][+-]\=\d\+\)\=\)\='
@@ -73,16 +73,16 @@ syn match   yamlTime            "\d\d\d\d-\d\d-\d\d\s\d\d:\d\d:\d\d.\d\d\s-\d\d:
 syn match   yamlTimestamp       '\d\d\d\d-\%(1[0-2]\|\d\)-\%(3[0-2]\|2\d\|1\d\|\d\)\%( \%([01]\d\|2[0-3]\):[0-5]\d:[0-5]\d.\d\d [+-]\%([01]\d\|2[0-3]\):[0-5]\d\|t\%([01]\d\|2[0-3]\):[0-5]\d:[0-5]\d.\d\d[+-]\%([01]\d\|2[0-3]\):[0-5]\d\|T\%([01]\d\|2[0-3]\):[0-5]\d:[0-5]\d.\dZ\)\='
 
 " Single and double quoted scalars
-syn region  yamlString	        start="'" end="'" skip="\\'"
+syn region  yamlString          start="'" end="'" skip="\\'"
                                 \ contains=yamlSingleEscape
-syn region  yamlString	        start='"' end='"' skip='\\"' 
+syn region  yamlString          start='"' end='"' skip='\\"'
                                 \ contains=yamlEscape
 
 " Escaped symbols
 " every charater preceeded with slash is escaped one
-syn match   yamlEscape		    "\\."
+syn match   yamlEscape          "\\."
 " 2,4 and 8-digit escapes
-syn match   yamlEscape		    "\\\(x\x\{2\}\|u\x\{4\}\|U\x\{8\}\)"
+syn match   yamlEscape          "\\\(x\x\{2\}\|u\x\{4\}\|U\x\{8\}\)"
 syn match   yamlEscape          contained display +\\[\\"abefnrtv^0_ NLP]+
 syn match   yamlEscape          contained display '\\x\x\{2}'
 syn match   yamlEscape          contained display '\\u\x\{4}'
@@ -91,23 +91,23 @@ syn match   yamlEscape          contained display '\\U\x\{8}'
 syn match   yamlEscape          display '\\\%(\r\n\|[\r\n]\)'
 syn match   yamlSingleEscape    contained display +''+
 
-syn match   yamlKey		        "\w\+\ze\s*:"
-syn match   yamlType		    "![^\s]\+\s\@="
+syn match   yamlKey             "\w\+\ze\s*:\(\s\|\n\)"
+syn match   yamlType            "![^\s]\+\s\@="
 
-hi link yamlKey		        Identifier
-hi link yamlType	        Type
-hi link yamlInteger	        Number
+hi link yamlKey             Identifier
+hi link yamlType            Type
+hi link yamlInteger         Number
 hi link yamlFloating        Float
 hi link yamlNumber          Number
-hi link yamlEscape	        Special
+hi link yamlEscape          Special
 hi link yamlSingleEscape    SpecialChar
-hi link yamlComment	        Comment
-hi link yamlBlock	        Operator
-hi link yamlDelimiter	    Delimiter
-hi link yamlString	        String
-hi link yamlBoolean	        Boolean
-hi link yamlNull	        Boolean
-hi link yamlTime	        String
+hi link yamlComment         Comment
+hi link yamlBlock           Operator
+hi link yamlDelimiter       Delimiter
+hi link yamlString          String
+hi link yamlBoolean         Boolean
+hi link yamlNull            Boolean
+hi link yamlTime            String
 hi link yamlTodo            Todo
 hi link yamlDocumentHeader  PreProc
 hi link yamlDocumentEnd     PreProc
