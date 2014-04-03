@@ -8,7 +8,7 @@
 YAML.VIM and YAML collection sorting scripts:
 
 INSTALLATION:
-- Put yaml.vim in vim's syntax folder (/usr/share/vim/syntax on my system)
+- Put syntax/yaml.vim in vim's syntax folder (/usr/share/vim/syntax on my system)
 - Add the .yaml/.yml extensions to the filetype.vim file: |
     " Yaml
     au BufNewFile,BufRead *.yaml,*.yml    setf yaml
