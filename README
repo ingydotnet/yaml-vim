@@ -1,9 +1,12 @@
-# Vim syntax files
-# Language: YAML
-# Author:   Igor Vergeichik <iverg@mail.ru>
-# Author:   Nikolai Weibull <now@bitwi.se>
-# Sponsor:  Tom Sawyer <transami@transami.net>
-# Sponsor:  Ingy döt Net <ingy@ingy.net>
+# Vim syntax file
+# Language:         YAML (YAML Ain't Markup Language) 1.2
+# Maintainer:       Nikolai Pavlov <zyx.vim@gmail.com>
+# Credits:          Nikolai Weibull <now@bitwi.se>
+#                   Igor Vergeichik <iverg@mail.ru>
+# Support:          Ingy döt Net <ingy@ingy.net>
+#                   Tom Sawyer <transami@transami.net>
+# Last Change:      2010-10-08
+# Version:          2.1
 
 YAML.VIM and YAML collection sorting scripts:
 
